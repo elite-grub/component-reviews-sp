@@ -5,7 +5,7 @@
 ## Related Projects
 
 **Main Repo**
-- (https://github.com/elite-grub)
+- https://github.com/elite-grub
 
 **Reviews**
 - [Service](https://github.com/elite-grub/service-sp)
