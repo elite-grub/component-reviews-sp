@@ -9,7 +9,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon view/index.js",
-    "build": "webpack -d --w"
+    "build": "webpack -d --w",
+    "seed": "node models/reviews.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
   },
   "homepage": "https://github.com/elite-grub/component-reviews-sp#readme",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "lodash": "^4.17.11",
     "mongoose": "^5.4.15",

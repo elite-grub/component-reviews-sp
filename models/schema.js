@@ -17,6 +17,8 @@ const reviewsSchema = new mongoose.Schema({
   didCheckIn: Boolean,
   checkInStatus: String,
   review: String,
+  hasPictures: Boolean,
+  pictures: String,
   wasThisReview: Boolean,
   peerVoted: {
     avatar: String,
