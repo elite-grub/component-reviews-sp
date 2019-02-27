@@ -24,7 +24,9 @@
   "homepage": "https://github.com/elite-grub/component-reviews-sp#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "es6-promise": "^4.2.6",
     "express": "^4.16.4",
+    "isomorphic-fetch": "^2.2.1",
     "lodash": "^4.17.11",
     "mongoose": "^5.4.15",
     "pg": "^7.8.1",
