@@ -4,7 +4,6 @@ import ReviewsListEntry from './ReviewsListEntry.jsx';
 const ReviewsList = ({reviews}) => {
   return (
     <div>
-
       <div
         className='headerContainer'>
         <div
@@ -91,13 +90,11 @@ const ReviewsList = ({reviews}) => {
           </div>
         </div>
       </div>
-
       <div>
         <ReviewsListEntry
           reviews={reviews}
         />
       </div>
-
     </div>
   )
 }

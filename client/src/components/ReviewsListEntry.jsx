@@ -1,12 +1,15 @@
 import React from 'react';
 
+let id = 1
+
 const ReviewsListEntry = ({reviews}) => {
   return (
     <div>
       <ul
         className='allReviewsContainer'>
         <li
-          className='emptyDefaultContainer'>
+          className='emptyDefaultContainer'
+          key={id++}>
           <div
             className='emptyAvatarContainer'>
             <div
@@ -34,7 +37,8 @@ const ReviewsListEntry = ({reviews}) => {
         </li>
         {reviews.map(review => (
           <li
-            className='eachReviewLinkedList'>
+            className='eachReviewLinkedList'
+            key={id++}>
             <div
               className='eachReviewContainer'>
               <div
@@ -53,30 +57,36 @@ const ReviewsListEntry = ({reviews}) => {
                     <ul
                       className='userInfoContainer'>
                       <li
-                        className='userName'>
+                        className='userName'
+                        key={id++}>
                         Ben D.
                       </li>
                       <li
-                        className='locationInfo'>
+                        className='locationInfo'
+                        key={id++}>
                         Southgate, MI
                       </li>
                     </ul>
                     <ul
                       className='userStatsContainer'>
                       <li
-                        className='friendCount'>
+                        className='friendCount'
+                        key={id++}>
                         37 Friends
                       </li>
                       <li
-                        className='reviewCount'>
+                        className='reviewCount'
+                        key={id++}>
                         131 reviews
                       </li>
                       <li
-                        className='photoCount'>
+                        className='photoCount'
+                        key={id++}>
                         29 Photos
                       </li>
                       <li
-                        className='isElite'>
+                        className='isElite'
+                        key={id++}>
                         Elite '19'
                       </li>
                     </ul>
@@ -85,23 +95,28 @@ const ReviewsListEntry = ({reviews}) => {
                 <ul
                   className='profileLinksContainer'>
                   <li
-                    className='shareReviewLink'>
+                    className='shareReviewLink'
+                    key={id++}>
                     Share review
                   </li>
                   <li
-                    className='embedReviewLink'>
+                    className='embedReviewLink'
+                    key={id++}>
                     Embed review
                   </li>
                   <li
-                    className='complimentLink'>
+                    className='complimentLink'
+                    key={id++}>
                     Compliment
                   </li>
                   <li
-                    className='sendMessageLink'>
+                    className='sendMessageLink'
+                    key={id++}>
                     Send message
                   </li>
                   <li
-                    className='followUserLink'>
+                    className='followUserLink'
+                    key={id++}>
                     Follow Ben D.
                   </li>
                 </ul>
@@ -136,7 +151,8 @@ const ReviewsListEntry = ({reviews}) => {
                   <ul
                     className='votingButtonsContainer'>
                     <li
-                      className='votingButtonContainer'>
+                      className='votingButtonContainer'
+                      key={id++}>
                       <span
                         className='votingIcon'>
                         &#9786;
@@ -155,7 +171,8 @@ const ReviewsListEntry = ({reviews}) => {
                       </span>
                     </li>
                     <li
-                      className='votingButtonContainer'>
+                      className='votingButtonContainer'
+                      key={id++}>
                       <span
                         className='votingIcon'>
                         &#9786;
@@ -174,7 +191,8 @@ const ReviewsListEntry = ({reviews}) => {
                       </span>
                     </li>
                     <li
-                      className='votingButtonContainer'>
+                      className='votingButtonContainer'
+                      key={id++}>
                       <span
                         className='votingIcon'>
                         &#9786;
