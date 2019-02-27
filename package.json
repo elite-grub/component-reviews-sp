@@ -9,7 +9,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon view/index.js",
-    "build": "webpack -d --w",
+    "build": "webpack -d --watch",
     "seed": "node models/reviews.js"
   },
   "repository": {
