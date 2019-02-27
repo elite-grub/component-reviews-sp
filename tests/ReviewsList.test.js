@@ -18,7 +18,7 @@ describe('<ReviewsList />', () => {
     expect(wrapper.exists('.headerContainer')).toEqual(true);
   });
 
-  it('should have div as parent from ul', () => {
+  it('should have no typos for className sortBy', () => {
     const wrapper = mount(<ReviewsList />);
     expect(wrapper.find('.sortBy').every('.sortBy')).toEqual(true);
   });

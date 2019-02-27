@@ -35,7 +35,7 @@ const ReviewsListEntry = ({reviews}) => {
             </div>
           </div>
         </li>
-        {reviews.map(review => (
+        {reviews && reviews.map(review => (
           <li
             className='eachReviewLinkedList'
             key={id++}>
@@ -220,7 +220,7 @@ const ReviewsListEntry = ({reviews}) => {
                       className='businessOwnerAvatarContainer'>
                       <div
                         className='businessOwnerAvatar'>
-                        :)
+                        {`:)`}
                       </div>
                     </div>
                     <div
