@@ -21,6 +21,7 @@ const ReviewsListEntry = ({reviews}) => {
                 className='emptyStarsContainer'>
                 <div
                   className='emptyStars'>
+                  *****
                 </div>
               </div>
               <div
@@ -113,12 +114,112 @@ const ReviewsListEntry = ({reviews}) => {
                     className='reviewStars'>
                     *****
                   </div>
-                  <div
-                    className='reviewDate'>
+                  <span>
                     1/25/2019
-                  </div>
+                  </span>
                 </div>
-
+                <p>
+                  food was great
+                </p>
+                <div
+                  className='reviewFooterContainer'>
+                  <div
+                    className='didVoteContainer'>
+                    <p>
+                      <strong>
+                        Randy M. and 2 others
+                      </strong>
+                      {' '}
+                      voted for this review
+                    </p>
+                  </div>
+                  <ul
+                    className='votingButtonsContainer'>
+                    <li
+                      className='votingButtonContainer'>
+                      <span
+                        className='votingIcon'>
+                        &#9786;
+                      </span>
+                      {' '}
+                      <span
+                        className='voteType'>
+                        <strong>
+                          Useful
+                        </strong>
+                      </span>
+                      {' '}
+                      <span
+                        className='voteCount'>
+                        1
+                      </span>
+                    </li>
+                    <li
+                      className='votingButtonContainer'>
+                      <span
+                        className='votingIcon'>
+                        &#9786;
+                      </span>
+                      {' '}
+                      <span
+                        className='voteType'>
+                        <strong>
+                          Funny
+                        </strong>
+                      </span>
+                      {' '}
+                      <span
+                        className='voteCount'>
+                        2
+                      </span>
+                    </li>
+                    <li
+                      className='votingButtonContainer'>
+                      <span
+                        className='votingIcon'>
+                        &#9786;
+                      </span>
+                      {' '}
+                      <span
+                        className='voteType'>
+                        <strong>
+                          Cool
+                        </strong>
+                      </span>
+                      {' '}
+                      <span
+                        className='voteCount'>
+                        1
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  className='businessOwnerReplyContainer'>
+                  <div
+                    className='businessOwnerHeaderContainer'>
+                    <div
+                      className='businessOwnerAvatarContainer'>
+                      <div
+                        className='businessOwnerAvatar'>
+                        :)
+                      </div>
+                    </div>
+                    <div
+                      className='businessOwnerHeader'>
+                      <strong>
+                        Comment from Bob P. of Fog Harbor Fish House
+                      </strong>
+                      <br/>
+                      Business Manager
+                    </div>
+                  </div>
+                  <span>
+                    1/26/2019 Ben
+                    <br/>
+                    Thanks for eating with us
+                  </span>
+                </div>
               </div>
             </div>
           </li>
