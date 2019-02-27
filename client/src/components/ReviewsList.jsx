@@ -3,9 +3,10 @@ import ReviewsListEntry from './ReviewsListEntry.jsx';
 
 const ReviewsList = ({reviews}) => {
   return (
-    <div
-      className='reviewsList'>
-      {console.log(reviews)}
+    <div>
+      <ReviewsListEntry
+        reviews={reviews}
+      />
     </div>
   )
 }
