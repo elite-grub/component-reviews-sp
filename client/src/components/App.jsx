@@ -1,4 +1,5 @@
 import React from 'react';
+import ReviewsList from './ReviewsList.jsx';
 
 const API_URL = 'http://localhost:3000/api/reviews/1';
 
@@ -33,7 +34,9 @@ class App extends React.Component {
     }
     return (
       <div>
-        {console.log(data)}
+        <ReviewsList
+          reviews={data}
+        />
       </div>
     );
   };
