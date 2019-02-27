@@ -108,33 +108,33 @@ const fakeDataFoodPictures = [
 ];
 
 const fakeDataName = [
-'Spark Park', 'Kenneth Trott', 'Winnie Fong', 'Brian Lagman', 
-'Talan Patton', 'Coleman Anderson', 'Kianna Bates', 'Casey Barr', 
-'Marcos Cuevas', 'Charles Huang', 'Vaughn Chang', 'Gunnar Ochoa', 
-'Maximus Santos', 'David Odom', 'Cade Navarro', 'Kathryn Rollins', 
-'Mina Sosa', 'Gideon Yu', 'Hayley Frazier', 'Aiden Adkins', 
-'Brisa Duke', 'Araceli Pace', 'Ryann Blair', 'Rafael Everett', 
+'Spark Park', 'Kenneth Trott', 'Winnie Fong', 'Brian Lagman',
+'Talan Patton', 'Coleman Anderson', 'Kianna Bates', 'Casey Barr',
+'Marcos Cuevas', 'Charles Huang', 'Vaughn Chang', 'Gunnar Ochoa',
+'Maximus Santos', 'David Odom', 'Cade Navarro', 'Kathryn Rollins',
+'Mina Sosa', 'Gideon Yu', 'Hayley Frazier', 'Aiden Adkins',
+'Brisa Duke', 'Araceli Pace', 'Ryann Blair', 'Rafael Everett',
 'Jay Horn', 'Molly Chavez', 'Myles Strickland', 'Nickolas Oliver',
 'Simone Alvarado', 'Nick Figueroa', 'Eden Ayala', 'Michelle Ortiz',
 'Dania Faulkner', 'Ariana Holden', 'Rhett Potter', 'Raul Banks',
 'Elias Vazquez', 'Larissa Hood', 'Jan Hutchinson', 'Simone Combs',
 'Messiah Harmon', 'Jama; Williamson', 'Genevieve Lin', 'Neveah Larson',
-'Adeline Jones', 'Jaden Mercer', 'Kristian Levy', 'Turner Wang', 
+'Adeline Jones', 'Jaden Mercer', 'Kristian Levy', 'Turner Wang',
 'Jamiya Zhang', 'Marcus Patel', 'Carolyn Kim', 'Yurem Nolan',
-'Graham Patterson', 'Jaxon Jennings', 'Rylie Richardson', 
+'Graham Patterson', 'Jaxon Jennings', 'Rylie Richardson',
 'Colt Nunez', 'Jazmyn Cantu', 'Johan Bryant', 'Anna Golden'
 ];
 
 const fakeDataLocation = [
 'San Francisco, CA', 'Los Angeles, CA', 'Fremont, CA', 'San Ramon, CA',
-'Milpitas, CA', 'Hayward, CA', 'Oakland, CA', 'San Jose, CA', 
+'Milpitas, CA', 'Hayward, CA', 'Oakland, CA', 'San Jose, CA',
 'Berkeley, CA', 'Palo Alto, CA', 'Mountain View, CA', 'Sunnyvale, CA',
 'Pleasanton, CA', 'Redwood City, CA', 'Concord, CA', 'Livermore, CA',
-'Los Altos, CA', 'Santa Rosa, CA', 'Vallejo, CA', 'Cupertino, CA', 
+'Los Altos, CA', 'Santa Rosa, CA', 'Vallejo, CA', 'Cupertino, CA',
 'Daly City, CA', 'San Leandro, CA', 'Antioch, CA', 'Walnut Creek, CA',
 'Los Gatos, CA', 'Saratoga, CA', 'Menlo Park, CA', 'Burlingame, CA',
-'South San Francisco, CA', 'Emeryville, CA', 'Danville, CA', 
-'Pittsburg, CA', 'Moraga, CA', 'Albany, CA', 'Hillsborough, CA', 
+'South San Francisco, CA', 'Emeryville, CA', 'Danville, CA',
+'Pittsburg, CA', 'Moraga, CA', 'Albany, CA', 'Hillsborough, CA',
 'Foster City, CA', 'San Rafael, CA', 'Orinda, CA', 'Dublin, CA',
 'East Palo Alto, CA', 'Atherton, CA', 'Fairfield, CA', 'Tiburon, CA',
 'Santa Clara, CA', 'El Cerrito, CA', 'San Mateo, CA', 'Gilroy, CA',
@@ -167,8 +167,8 @@ const fakeDataReview = [
 ];
 
 const fakeDataThoughts = [
-  'Useful', 
-  'Cool', 
+  'Useful',
+  'Cool',
   'Funny',
 ];
 
@@ -290,7 +290,11 @@ const fakeCool = () => {
 };
 
 const fakeCommentFromOwner = () => {
-  return _.sample([true, false]);
+  let commentBooArr = [
+    false, false, false, false, false,
+    true
+  ];
+  return _.sample(commentBooArr);
 };
 
 const fakeOwnerReviewAvatar = () => {
