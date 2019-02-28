@@ -40,6 +40,7 @@ const reviewsSchema = new mongoose.Schema({
   },
   languages: String,
   restaurantName: String,
+  nameAndOthers: String,
   collateral: {
     emptyProfile: String,
   }

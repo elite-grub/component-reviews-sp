@@ -108,21 +108,21 @@ const fakeDataFoodPictures = [
 ];
 
 const fakeDataName = [
-'Spark Park', 'Kenneth Trott', 'Winnie Fong', 'Brian Lagman',
-'Talan Patton', 'Coleman Anderson', 'Kianna Bates', 'Casey Barr',
-'Marcos Cuevas', 'Charles Huang', 'Vaughn Chang', 'Gunnar Ochoa',
-'Maximus Santos', 'David Odom', 'Cade Navarro', 'Kathryn Rollins',
-'Mina Sosa', 'Gideon Yu', 'Hayley Frazier', 'Aiden Adkins',
-'Brisa Duke', 'Araceli Pace', 'Ryann Blair', 'Rafael Everett',
-'Jay Horn', 'Molly Chavez', 'Myles Strickland', 'Nickolas Oliver',
-'Simone Alvarado', 'Nick Figueroa', 'Eden Ayala', 'Michelle Ortiz',
-'Dania Faulkner', 'Ariana Holden', 'Rhett Potter', 'Raul Banks',
-'Elias Vazquez', 'Larissa Hood', 'Jan Hutchinson', 'Simone Combs',
-'Messiah Harmon', 'Jama; Williamson', 'Genevieve Lin', 'Neveah Larson',
-'Adeline Jones', 'Jaden Mercer', 'Kristian Levy', 'Turner Wang',
-'Jamiya Zhang', 'Marcus Patel', 'Carolyn Kim', 'Yurem Nolan',
-'Graham Patterson', 'Jaxon Jennings', 'Rylie Richardson',
-'Colt Nunez', 'Jazmyn Cantu', 'Johan Bryant', 'Anna Golden'
+'Spark P.', 'Kenneth T.', 'Winnie F.', 'Brian L.',
+'Talan P.', 'Coleman A.', 'Kianna B.', 'Casey B.',
+'Marcos C.', 'Charles H.', 'Vaughn C.', 'Gunnar O.',
+'Maximus S.', 'David O.', 'Cade N.', 'Kathryn R.',
+'Mina S.', 'Gideon Y.', 'Hayley F.', 'Aiden A.',
+'Brisa D.', 'Araceli P.', 'Ryann B.', 'Rafael E.',
+'Jay H.', 'Molly C.', 'Myles S.', 'Nickolas O.',
+'Simone A.', 'Nick F.', 'Eden A.', 'Michelle O.',
+'Dania F.', 'Ariana H.', 'Rhett P.', 'Raul B.',
+'Elias V.', 'Larissa H.', 'Jan H.', 'Simone C.',
+'Messiah H.', 'Jama; W.', 'Genevieve L.', 'Neveah L.',
+'Adeline J.', 'Jaden M.', 'Kristian L.', 'Turner W.',
+'Jamiya Z.', 'Marcus P.', 'Carolyn K.', 'Yurem N.',
+'Graham P.', 'Jaxon J.', 'Rylie R.',
+'Colt N.', 'Jazmyn C.', 'Johan B.', 'Anna G.'
 ];
 
 const fakeDataLocation = [
@@ -186,6 +186,10 @@ const getRandomInclusive = (min, max) => {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
+
+const peopleRecommendedReviews = () => {
+  return _.sample(fakeDataName);
+}
 
 const fakeAvatar = () => {
   return _.sample(fakeDataAvatar);
@@ -412,6 +416,7 @@ const save = () => {
       },
       languages: fakeLanguages(),
       restaurantName: fakeRestaurantName(),
+      nameAndOthers: peopleRecommendedReviews(),
       collateral: {
         emptyProfile: 'https://s3-us-west-1.amazonaws.com/elite-grub-collateral/empty_profile.png'
       }
