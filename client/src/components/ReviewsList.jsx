@@ -1,6 +1,13 @@
 import React from 'react';
 import ReviewsListEntry from './ReviewsListEntry.jsx';
 
+// Helper function for random inclusive number
+const getRandomInclusive = (min, max) => {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
 const ReviewsList = ({reviews}) => {
   return (
     <div>
@@ -14,7 +21,10 @@ const ReviewsList = ({reviews}) => {
           </div>
           <div
             className='forCurrentRestaurant'>
-            for Fog Harbor Fish House
+            for {''}
+            <strong>
+              {reviews[0].restaurantName}
+            </strong>
           </div>
         </div>
         <div
@@ -76,15 +86,15 @@ const ReviewsList = ({reviews}) => {
             <select>
               <option
                 defaultValue='english'>
-                English (5007)
+                English ({getRandomInclusive(3000, 5500)})
               </option>
               <option
-                value='japanese'>
-                Japanese (9)
+                value='secondLanguage'>
+                {reviews[0].languages}
               </option>
               <option
-                value='portugese'>
-                Portugese (6)
+                value='thirdLanguage'>
+                {reviews[1].languages}
               </option>
             </select>
           </div>
