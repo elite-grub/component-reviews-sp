@@ -336,6 +336,40 @@ const fakeOwnerReview = () => {
   return _.sample(fakeDataReview);
 };
 
+const fakeRestaurantName = () => {
+  let fakeNameArr = [
+    'Fog Harbor Fish House',
+    'E & J',
+    'Super Duper',
+    'Marufuku Ramen',
+    'Farmhouse',
+    'Mensho Tokyo',
+    'Tacorea',
+    'Kitchen Story',
+    'Box Kitchen',
+    'Golden Boy Pizza',
+    'Brenda\'s French Soul Food',
+    'Burma Superstar',
+    'The Front Porch',
+    'The Bird',
+    'Chubby Noodle',
+    'Palm House',
+    'SoMa StrEat',
+    'HRD',
+    'Fondue Cowboy',
+    'Straw',
+    'Liholiho Yacht Club',
+    'Tataki',
+    'Thanh Long',
+    'Zero Zero',
+    'Barrel Head BrewHouse',
+    'Sushirrito',
+    'Hog Island Oyster Co',
+    'Dumpling Time'
+  ];
+  return _.sample(fakeNameArr);
+}
+
 const save = () => {
   for (var i = 1; i < 101; i++) {
     const allReviews = new Reviews({
@@ -377,6 +411,7 @@ const save = () => {
         review: fakeOwnerReview(),
       },
       languages: fakeLanguages(),
+      restaurantName: fakeRestaurantName(),
       collateral: {
         emptyProfile: 'https://s3-us-west-1.amazonaws.com/elite-grub-collateral/empty_profile.png'
       }
