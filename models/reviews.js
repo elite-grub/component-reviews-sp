@@ -234,6 +234,22 @@ const fakeStars = () => {
   return _.sample(stars);
 };
 
+const fakeLanguages = () => {
+  let languagesArr = [
+    'Japanese',
+    'Portugese',
+    'Chinese',
+    'Polish',
+    'Spanish',
+    'Korean',
+    'French',
+    'Greek',
+    'Filipino',
+    'Malaysian'
+  ];
+  return `${_.sample(languagesArr)} (${getRandomInclusive(1, 28)})`
+}
+
 const fakeDate = () => {
   let month = getRandomInclusive(1, 12);
   let day = getRandomInclusive(1, 29);
@@ -359,6 +375,10 @@ const save = () => {
         title: fakeOwnerReviewTitle(),
         date: fakeOwnerReviewDate(),
         review: fakeOwnerReview(),
+      },
+      languages: fakeLanguages(),
+      collateral: {
+        emptyProfile: 'https://s3-us-west-1.amazonaws.com/elite-grub-collateral/empty_profile.png'
       }
     });
     allReviews.save(err => {

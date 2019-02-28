@@ -38,6 +38,10 @@ const reviewsSchema = new mongoose.Schema({
     date: String,
     review: String,
   },
+  languages: String,
+  collateral: {
+    emptyProfile: String,
+  }
 });
 
 const Reviews = mongoose.model('reviews', reviewsSchema);
