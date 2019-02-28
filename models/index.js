@@ -5,7 +5,11 @@ const db = mongoose.connection;
 
 const allReviews = (id, callback) => {
   Reviews
-    .find({id: 1})
+    .aggregate([{
+      $sample: {
+        size: 20
+      }
+    }])
     .exec((err, data) => {
       if (err) {
         callback(err, null);

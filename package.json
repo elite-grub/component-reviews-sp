@@ -7,9 +7,9 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "nodemon view/index.js",
-    "build": "webpack -d --w",
+    "build": "webpack -d --watch",
     "seed": "node models/reviews.js"
   },
   "repository": {
@@ -24,7 +24,9 @@
   "homepage": "https://github.com/elite-grub/component-reviews-sp#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "es6-promise": "^4.2.6",
     "express": "^4.16.4",
+    "isomorphic-fetch": "^2.2.1",
     "lodash": "^4.17.11",
     "mongoose": "^5.4.15",
     "pg": "^7.8.1",
@@ -36,6 +38,11 @@
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.10.0",
+    "jest": "^24.1.0",
+    "jsdom": "13.2.0",
+    "jsdom-global": "3.0.2",
     "webpack": "^4.29.5",
     "webpack-cli": "^3.2.3"
   }
