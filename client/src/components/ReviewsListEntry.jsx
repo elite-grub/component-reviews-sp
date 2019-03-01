@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../dist/styles.css';
 
 let id = 1
 
@@ -9,7 +10,6 @@ const getRandomInclusive = (min, max) => {
 };
 
 const ReviewsListEntry = ({reviews}) => {
-  {console.log(reviews)}
   return (
     <div>
       <ul
@@ -56,12 +56,12 @@ const ReviewsListEntry = ({reviews}) => {
                   className='profileContainer'>
                   <div
                     className='avatarContainer'>
-                    <div
-                      className='avatar'>
-                      <img
+
+                      {<img
                         src={review.user.avatar}
-                      />
-                    </div>
+                        className='avatar'
+                      />}
+
                   </div>
                   <div
                     className='detailsContainer'>
@@ -146,7 +146,8 @@ const ReviewsListEntry = ({reviews}) => {
                     {review.date}
                   </span>
                 </div>
-                <p>
+                <p
+                  className='userReview'>
                   {review.review}
                 </p>
                 <div
@@ -238,6 +239,7 @@ const ReviewsListEntry = ({reviews}) => {
                           className='businessOwnerAvatar'>
                           {<img
                             src={review.ownerReview.avatar}
+                            className='businessAvatar'
                           />}
                         </div>
                       </div>

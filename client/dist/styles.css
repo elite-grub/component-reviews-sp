@@ -1,0 +1,177 @@
+body {
+  padding-left: 24.5%;
+  width: 660px;
+  resize: horizontal;
+  overflow: auto;
+}
+
+.bodyContainer {
+  float: left;
+  border-color: black;
+  border-width: 1px;
+  border-style: solid;
+  /* margin-right: 30px; */
+  width: 629px;
+}
+
+.headerContainer {
+  border: solid 1px black;
+}
+
+.headerTextContainer {
+  margin-bottom: 6px;
+}
+
+.recommendedReviews {
+  float: left;
+  font-size: 18pt;
+  font-weight: bold;
+  color: #d32323;
+  padding-right: 5px;
+}
+
+.forCurrentRestaurant {
+  font-size: 18pt;
+}
+
+.searchAndSortContainer {
+  display: flex;
+}
+
+.searchBarContainer {
+  display: flex;
+}
+
+.searchBar {
+  width: 232px;
+  height: 25px;
+  font-size: 10pt;
+}
+
+.searchButton {
+  width: 35px;
+}
+
+.sortAndLanguageContainer {
+  padding-top: 4px;
+}
+
+.sortContainer {
+  display: flex;
+  float: left;
+  padding-left: 25px;
+}
+
+.sortDropDown {
+  width: 120px;
+}
+
+.languageContainer {
+  display: flex;
+  float: right;
+  padding-left: 22px;
+}
+
+.languageDropDown {
+  width: 163px;
+}
+
+.allReviewsContainer {
+  padding-left: 0px;
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* flex-wrap: wrap; */
+}
+
+.emptyDefaultContainer {
+  padding-left: 0px;
+  padding-bottom: 10px;
+  list-style-type: none;
+  /* width: 247.13px; */
+}
+
+.emptyAvatarContainer {
+  display: flex;
+  padding-right: 3px;
+
+}
+
+.emptyProfile {
+  /* padding-right: 62px; */
+  width: 247.13px;
+}
+
+.emptyStartReviewContainer {
+  border: 1px black solid;
+  width: 350px;
+  /* display: flex; */
+}
+
+.eachReviewLinkedList {
+  padding-left: 3px;
+  list-style-type: none;
+}
+
+.eachReviewContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-bottom: 15px;
+}
+
+.reviewContentContainer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 350px;
+  padding-right: 3px;
+}
+
+.reviewStarsContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.userReview {
+  margin-top: 2px;
+}
+
+.profileContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* padding-right: 55px; */
+  width: 247.13px;
+}
+
+.avatar {
+  width: 65px;
+  height: 65px;
+  object-fit: cover;
+}
+
+.userInfoContainer {
+  padding-left: 0px;
+  list-style-type: none;
+}
+
+.locationInfo {
+  padding-left: 0px;
+  list-style-type: none;
+}
+
+.userStatsContainer {
+  padding-left: 0px;
+  list-style-type: none;
+}
+
+.profileLinksContainer {
+  padding-left: 0px;
+  list-style-type: none;
+}
+
+.businessAvatar {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}

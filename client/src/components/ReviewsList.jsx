@@ -1,5 +1,6 @@
 import React from 'react';
 import ReviewsListEntry from './ReviewsListEntry.jsx';
+import style from '../../dist/styles.css';
 
 // Helper function for random inclusive number
 const getRandomInclusive = (min, max) => {
@@ -10,7 +11,8 @@ const getRandomInclusive = (min, max) => {
 
 const ReviewsList = ({reviews}) => {
   return (
-    <div>
+    <div
+      className='bodyContainer'>
       <div
         className='headerContainer'>
         <div
@@ -22,81 +24,73 @@ const ReviewsList = ({reviews}) => {
           <div
             className='forCurrentRestaurant'>
             for {''}
-            <strong>
-              {reviews[0].restaurantName}
-            </strong>
+            {reviews[0].restaurantName}
           </div>
         </div>
         <div
-          className='searchBarContainer'>
+          className='searchAndSortContainer'>
           <div
-            className='searchBar'>
+            className='searchBarContainer'>
             <input
+              className='searchBar'
               type='text'
-              defaultValue='Search within the reviews'
+              defaultValue=' Search within the reviews'
             />
-          </div>
-          <div
-            className='searchButton'>
-            <button>
+            <button
+              className='searchButton'>
               Go
             </button>
           </div>
-        </div>
-        <div
-          className='sortContainer'>
           <div
-            className='sortBy'>
-            Sort by
-          </div>
-          <div
-            className='sortDropDown'>
-            <select>
-              <option
-                defaultValue='yelp'>
-                Yelp Sort
-              </option>
-              <option
-                value='newest'>
-                Newest First
-              </option>
-              <option
-                value='oldest'>
-                Oldest First
-              </option>
-              <option
-                value='highest'>
-                Highest Rated
-              </option>
-              <option
-                value='lowest'>
-                Lowest Rated
-              </option>
-            </select>
-          </div>
-        </div>
-        <div
-          className='languageContainer'>
-          <div
-            className='language'>
-            Language
-          </div>
-          <div
-            className='languageDropDown'>
-            <select>
-              <option
-                defaultValue='english'>
-                English ({getRandomInclusive(3000, 5500)})
-              </option>
-              <option
-                value='secondLanguage'>
-                {reviews[0].languages}
-              </option>
-              <option
-                value='thirdLanguage'>
-                {reviews[1].languages}
-              </option>
-            </select>
+            className='sortAndLanguageContainer'>
+            <div
+              className='sortContainer'>
+              <div>
+                <select
+                  className='sortDropDown'>
+                  <option
+                    defaultValue='yelp'>
+                    Sort by Yelp Sort
+                  </option>
+                  <option
+                    value='newest'>
+                    Newest First
+                  </option>
+                  <option
+                    value='oldest'>
+                    Oldest First
+                  </option>
+                  <option
+                    value='highest'>
+                    Highest Rated
+                  </option>
+                  <option
+                    value='lowest'>
+                    Lowest Rated
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div
+              className='languageContainer'>
+              <div>
+                <select
+                  className='languageDropDown'>
+                  <option
+                    defaultValue='english'>
+                    Language English ({getRandomInclusive(3000, 5500)})
+                  </option>
+                  <option
+                    value='secondLanguage'>
+                    {reviews[0].languages}
+                  </option>
+                  <option
+                    value='thirdLanguage'>
+                    {reviews[1].languages}
+                  </option>
+                </select>
+              </div>
+            </div>
           </div>
         </div>
       </div>
