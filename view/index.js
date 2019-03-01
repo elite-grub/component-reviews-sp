@@ -5,7 +5,7 @@ const { allReviews } = require('../models/index.js');
 const pathToAssets = path.join(__dirname, '../client/dist');
 const staticAssets = express.static(pathToAssets);
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3010;
 
 app.use(staticAssets);
 app.use(bodyParser.json());
@@ -23,6 +23,6 @@ app.get('/api/reviews/:id', (req, res) => {
   });
 });
 
-app.listen(port, () => 
+app.listen(port, () =>
   console.log(`listening on port ${port}`)
 );
