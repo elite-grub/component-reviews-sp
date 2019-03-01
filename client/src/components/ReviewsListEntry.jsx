@@ -2,7 +2,14 @@ import React from 'react';
 
 let id = 1
 
+const getRandomInclusive = (min, max) => {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
 const ReviewsListEntry = ({reviews}) => {
+  {console.log(reviews)}
   return (
     <div>
       <ul
@@ -15,7 +22,7 @@ const ReviewsListEntry = ({reviews}) => {
             <div
               className='emptyProfile'>
               {<img
-                src='https://s3-us-west-1.amazonaws.com/elite-grub-collateral/empty_profile.png'
+                src={reviews[0].collateral.emptyProfile}
               />}
             </div>
             <div
@@ -30,7 +37,9 @@ const ReviewsListEntry = ({reviews}) => {
               <div
                 className='startReviews'>
                 Start your review of {''}
-                <strong>Fog Harbor Fish House</strong>
+                <strong>
+                  {reviews[0].restaurantName}
+                </strong>
               </div>
             </div>
           </div>
@@ -49,7 +58,9 @@ const ReviewsListEntry = ({reviews}) => {
                     className='avatarContainer'>
                     <div
                       className='avatar'>
-                      {/* avatar */}
+                      <img
+                        src={review.user.avatar}
+                      />
                     </div>
                   </div>
                   <div
@@ -59,12 +70,12 @@ const ReviewsListEntry = ({reviews}) => {
                       <li
                         className='userName'
                         key={id++}>
-                        Ben D.
+                        {review.user.name}
                       </li>
                       <li
                         className='locationInfo'
                         key={id++}>
-                        Southgate, MI
+                        {review.user.location}
                       </li>
                     </ul>
                     <ul
@@ -72,23 +83,25 @@ const ReviewsListEntry = ({reviews}) => {
                       <li
                         className='friendCount'
                         key={id++}>
-                        37 Friends
+                        {review.user.friends}
                       </li>
                       <li
                         className='reviewCount'
                         key={id++}>
-                        131 reviews
+                        {review.user.otherReviews}
                       </li>
                       <li
                         className='photoCount'
                         key={id++}>
-                        29 Photos
+                        {review.user.photos}
                       </li>
-                      <li
-                        className='isElite'
-                        key={id++}>
-                        Elite '19'
-                      </li>
+                      {review.user.isElite === true &&
+                        <li
+                          className='isElite'
+                          key={id++}>
+                          Elite {review.user.elite}
+                        </li>
+                      }
                     </ul>
                   </div>
                 </div>
@@ -117,7 +130,7 @@ const ReviewsListEntry = ({reviews}) => {
                   <li
                     className='followUserLink'
                     key={id++}>
-                    Follow Ben D.
+                    Follow {review.user.name}
                   </li>
                 </ul>
               </div>
@@ -130,23 +143,25 @@ const ReviewsListEntry = ({reviews}) => {
                     *****
                   </div>
                   <span>
-                    1/25/2019
+                    {review.date}
                   </span>
                 </div>
                 <p>
-                  food was great
+                  {review.review}
                 </p>
                 <div
                   className='reviewFooterContainer'>
                   <div
                     className='didVoteContainer'>
-                    <p>
-                      <strong>
-                        Randy M. and 2 others
-                      </strong>
-                      {' '}
-                      voted for this review
-                    </p>
+                    {review.wasThisReview === true &&
+                      <p>
+                        <strong>
+                          {review.nameAndOthers} and {getRandomInclusive(1, 5)} others
+                        </strong>
+                        {' '}
+                        voted for this review
+                      </p>
+                    }
                   </div>
                   <ul
                     className='votingButtonsContainer'>
@@ -167,7 +182,7 @@ const ReviewsListEntry = ({reviews}) => {
                       {' '}
                       <span
                         className='voteCount'>
-                        1
+                        {getRandomInclusive(1, 5)}
                       </span>
                     </li>
                     <li
@@ -187,7 +202,7 @@ const ReviewsListEntry = ({reviews}) => {
                       {' '}
                       <span
                         className='voteCount'>
-                        2
+                        {getRandomInclusive(1, 5)}
                       </span>
                     </li>
                     <li
@@ -207,37 +222,41 @@ const ReviewsListEntry = ({reviews}) => {
                       {' '}
                       <span
                         className='voteCount'>
-                        1
+                        {getRandomInclusive(1, 5)}
                       </span>
                     </li>
                   </ul>
                 </div>
-                <div
-                  className='businessOwnerReplyContainer'>
+                {review.commentFromOwner === true &&
                   <div
-                    className='businessOwnerHeaderContainer'>
+                    className='businessOwnerReplyContainer'>
                     <div
-                      className='businessOwnerAvatarContainer'>
+                      className='businessOwnerHeaderContainer'>
                       <div
-                        className='businessOwnerAvatar'>
-                        {`:)`}
+                        className='businessOwnerAvatarContainer'>
+                        <div
+                          className='businessOwnerAvatar'>
+                          {<img
+                            src={review.ownerReview.avatar}
+                          />}
+                        </div>
+                      </div>
+                      <div
+                        className='businessOwnerHeader'>
+                        <strong>
+                          Comment from {review.ownerReview.name} of {reviews[0].restaurantName}
+                        </strong>
+                        <br/>
+                        {reviews[0].ownerReview.title}
                       </div>
                     </div>
-                    <div
-                      className='businessOwnerHeader'>
-                      <strong>
-                        Comment from Bob P. of Fog Harbor Fish House
-                      </strong>
+                    <span>
+                      {review.ownerReview.date} {review.user.name}
                       <br/>
-                      Business Manager
-                    </div>
+                      {review.ownerReview.review}
+                    </span>
                   </div>
-                  <span>
-                    1/26/2019 Ben
-                    <br/>
-                    Thanks for eating with us
-                  </span>
-                </div>
+                }
               </div>
             </div>
           </li>

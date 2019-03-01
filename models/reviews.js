@@ -118,7 +118,7 @@ const fakeDataName = [
 'Simone A.', 'Nick F.', 'Eden A.', 'Michelle O.',
 'Dania F.', 'Ariana H.', 'Rhett P.', 'Raul B.',
 'Elias V.', 'Larissa H.', 'Jan H.', 'Simone C.',
-'Messiah H.', 'Jama; W.', 'Genevieve L.', 'Neveah L.',
+'Messiah H.', 'Jama W.', 'Genevieve L.', 'Neveah L.',
 'Adeline J.', 'Jaden M.', 'Kristian L.', 'Turner W.',
 'Jamiya Z.', 'Marcus P.', 'Carolyn K.', 'Yurem N.',
 'Graham P.', 'Jaxon J.', 'Rylie R.',
