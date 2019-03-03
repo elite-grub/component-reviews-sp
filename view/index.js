@@ -10,6 +10,14 @@ const port = process.env.PORT || 3010;
 app.use(staticAssets);
 app.use(bodyParser.json());
 
+app.use((req, res, next) => {
+  // Website you wish to allow to connect
+  res.header("Access-Control-Allow-Origin", "*");
+  // Request headers you wish to allow
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 app.get('/', (req, res) => {
   res.send('app.get working');
 });

@@ -22,6 +22,7 @@ const ReviewsListEntry = ({reviews}) => {
             <div
               className='emptyProfile'>
               {<img
+                className='emptyProfileImg'
                 src={reviews[0].collateral.emptyProfile}
               />}
             </div>
@@ -44,6 +45,9 @@ const ReviewsListEntry = ({reviews}) => {
             </div>
           </div>
         </li>
+        <hr
+          className='horizontalDivider'>
+        </hr>
         {reviews && reviews.map(review => (
           <li
             className='eachReviewLinkedList'
@@ -56,12 +60,10 @@ const ReviewsListEntry = ({reviews}) => {
                   className='profileContainer'>
                   <div
                     className='avatarContainer'>
-
                       {<img
                         src={review.user.avatar}
                         className='avatar'
                       />}
-
                   </div>
                   <div
                     className='detailsContainer'>
@@ -140,10 +142,10 @@ const ReviewsListEntry = ({reviews}) => {
                   className='reviewStarsContainer'>
                   <div
                     className='reviewStars'>
-                    *****
+                    ***** &thinsp;
                   </div>
                   <span>
-                    {review.date}
+                  {review.date}
                   </span>
                 </div>
                 <p
@@ -161,6 +163,16 @@ const ReviewsListEntry = ({reviews}) => {
                         </strong>
                         {' '}
                         voted for this review
+                      </p>
+                    }
+                  </div>
+                  <div>
+                    {review.wasThisReview === false &&
+                      <p
+                        className='wasThisReviewQuestion'>
+                        <strong>
+                          Was this review ...?
+                        </strong>
                       </p>
                     }
                   </div>

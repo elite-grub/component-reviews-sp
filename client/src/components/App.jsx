@@ -3,7 +3,7 @@ import ReviewsList from './ReviewsList.jsx';
 
 const API_URL = 'http://localhost:3010/api/reviews/1';
 
-class App extends React.Component {
+class Reviews extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -42,4 +42,4 @@ class App extends React.Component {
   };
 }
 
-export default App;
+export default Reviews;
