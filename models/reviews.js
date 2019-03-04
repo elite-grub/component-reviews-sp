@@ -435,6 +435,7 @@ const save = () => {
         threeStarsIcon: 'https://s3-us-west-1.amazonaws.com/elite-grub-collateral/three-stars.png',
         usefulIcon: 'https://s3-us-west-1.amazonaws.com/elite-grub-collateral/useful.png',
         reviewsStarsIcon: 'https://s3-us-west-1.amazonaws.com/elite-grub-collateral/reviews-stars.png',
+        sendMessageIcon: 'https://s3-us-west-1.amazonaws.com/elite-grub-collateral/send-message.png',
       }
     });
     allReviews.save(err => {
