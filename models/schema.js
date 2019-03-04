@@ -58,6 +58,7 @@ const reviewsSchema = new mongoose.Schema({
     shareReviewIcon: String,
     threeStarsIcon: String,
     usefulIcon: String,
+    reviewsStarsIcon: String,
   }
 });
 
