@@ -418,7 +418,22 @@ const save = () => {
       restaurantName: fakeRestaurantName(),
       nameAndOthers: peopleRecommendedReviews(),
       collateral: {
-        emptyProfile: 'https://s3-us-west-1.amazonaws.com/elite-grub-collateral/empty_profile.png'
+        emptyProfile: 'https://s3-us-west-1.amazonaws.com/elite-grub-collateral/empty_profile.png',
+        cameraIcon: 'https://s3-us-west-1.amazonaws.com/elite-grub-collateral/camera.png',
+        complimentIcon: 'https://s3-us-west-1.amazonaws.com/elite-grub-collateral/compliment.png',
+        coolIcon: 'https://s3-us-west-1.amazonaws.com/elite-grub-collateral/cool.png',
+        embedReviewIcon: 'https://s3-us-west-1.amazonaws.com/elite-grub-collateral/embed-review.png',
+        emptyStarsIcon: 'https://s3-us-west-1.amazonaws.com/elite-grub-collateral/empty-stars.png',
+        fiveStarsIcon: 'https://s3-us-west-1.amazonaws.com/elite-grub-collateral/five-stars.png',
+        followIcon: 'https://s3-us-west-1.amazonaws.com/elite-grub-collateral/follow.png',
+        fourStarsIcon: 'https://s3-us-west-1.amazonaws.com/elite-grub-collateral/four-stars.png',
+        friendsIcon: 'https://s3-us-west-1.amazonaws.com/elite-grub-collateral/friends.png',
+        funnyIcon: 'https://s3-us-west-1.amazonaws.com/elite-grub-collateral/funny.png',
+        morePagesFooter: 'https://s3-us-west-1.amazonaws.com/elite-grub-collateral/more-pages.png',
+        searchIcon: 'https://s3-us-west-1.amazonaws.com/elite-grub-collateral/search.png',
+        shareReviewIcon: 'https://s3-us-west-1.amazonaws.com/elite-grub-collateral/share-review.png',
+        threeStarsIcon: 'https://s3-us-west-1.amazonaws.com/elite-grub-collateral/three-stars.png',
+        usefulIcon: 'https://s3-us-west-1.amazonaws.com/elite-grub-collateral/useful.png',
       }
     });
     allReviews.save(err => {
