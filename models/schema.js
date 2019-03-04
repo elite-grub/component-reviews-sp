@@ -43,6 +43,21 @@ const reviewsSchema = new mongoose.Schema({
   nameAndOthers: String,
   collateral: {
     emptyProfile: String,
+    cameraIcon: String,
+    complimentIcon: String,
+    coolIcon: String,
+    embedReviewIcon: String,
+    emptyStarsIcon: String,
+    fiveStarsIcon: String,
+    followIcon: String,
+    fourStarsIcon: String,
+    friendsIcon: String,
+    funnyIcon: String,
+    morePagesFooter: String,
+    searchIcon: String,
+    shareReviewIcon: String,
+    threeStarsIcon: String,
+    usefulIcon: String,
   }
 });
 
