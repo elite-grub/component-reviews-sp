@@ -24,7 +24,7 @@ const ReviewsList = ({reviews}) => {
           <div
             className='forCurrentRestaurant'>
             for {''}
-            {reviews[0].restaurantName}
+            Fog Harbor Fish House
           </div>
         </div>
         <div
@@ -36,10 +36,11 @@ const ReviewsList = ({reviews}) => {
               type='text'
               defaultValue=' Search within the reviews'
             />
-            <button
-              className='searchButton'>
-              Go
-            </button>
+            {console.log(reviews)}
+            {<img
+              className='searchButton'
+              src={reviews[0].collateral.searchIcon}>
+            </img>}
           </div>
           <div
             className='sortAndLanguageContainer'>
@@ -94,6 +95,9 @@ const ReviewsList = ({reviews}) => {
           </div>
         </div>
       </div>
+      <hr
+        className='belowHeaderLine'>
+      </hr>
       <div>
         <ReviewsListEntry
           reviews={reviews}
