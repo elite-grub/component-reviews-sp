@@ -36,7 +36,6 @@ const ReviewsList = ({reviews}) => {
               type='text'
               defaultValue=' Search within the reviews'
             />
-            {console.log(reviews)}
             {<img
               className='searchButton'
               src={reviews[0].collateral.searchIcon}>
