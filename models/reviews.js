@@ -434,6 +434,7 @@ const save = () => {
         shareReviewIcon: 'https://s3-us-west-1.amazonaws.com/elite-grub-collateral/share-review.png',
         threeStarsIcon: 'https://s3-us-west-1.amazonaws.com/elite-grub-collateral/three-stars.png',
         usefulIcon: 'https://s3-us-west-1.amazonaws.com/elite-grub-collateral/useful.png',
+        reviewsStarsIcon: 'https://s3-us-west-1.amazonaws.com/elite-grub-collateral/reviews-stars.png',
       }
     });
     allReviews.save(err => {
