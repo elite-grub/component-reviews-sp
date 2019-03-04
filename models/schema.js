@@ -60,6 +60,7 @@ const reviewsSchema = new mongoose.Schema({
     usefulIcon: String,
     reviewsStarsIcon: String,
     sendMessageIcon: String,
+    footerSiteMapIcon: String,
   }
 });
 
