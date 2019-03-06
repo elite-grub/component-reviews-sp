@@ -1,7 +1,7 @@
 import React from 'react';
 import ReviewsList from './ReviewsList.jsx';
 
-const API_URL = 'http://localhost:3010/api/reviews/1';
+const API_URL = 'http://database:3010/api/reviews/1';
 
 class Reviews extends React.Component {
   constructor(props) {
