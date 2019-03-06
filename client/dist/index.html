@@ -1,22 +1,28 @@
 <!DOCTYPE html>
+
 <html>
   <head>
     <title>
-      EG Reviews
+      Proxy - Reviews
     </title>
     <script
-      src="https://cdn.jsdelivr.net/npm/vivid-icons@1.0.9"
-      type="text/javascript"></script>
-    <link
-      rel='stylesheet'
-      href='./styles.css'>
+      crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script
+      crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script
+      src='http://localhost:3010/bundle.js'></script>
   </head>
 
   <body>
-
     <div
-      id='app'></div>
-    <script
-      type='text/javascript' src='./bundle.js'></script>
+      id='Reviews'>
+    </div>
+    <script>
+      ReactDOM.render(
+        React.createElement(Reviews, {id: 1}),
+        document.getElementById('Reviews')
+      );
+    </script>
   </body>
+
 </html>
