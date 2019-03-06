@@ -1,99 +1,115 @@
 import React from 'react';
 import ReviewsListEntry from './ReviewsListEntry.jsx';
+import style from '../../dist/styles.css';
+
+// Helper function for random inclusive number
+const getRandomInclusive = (min, max) => {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
 
 const ReviewsList = ({reviews}) => {
   return (
     <div>
       <div
-        className='headerContainer'>
+        className='bodyContainer'>
         <div
-          className='headerTextContainer'>
+          className='headerContainer'>
           <div
-            className='recommendedReviews'>
-            Recommended Reviews
+            className='headerTextContainer'>
+            <div
+              className='recommendedReviews'>
+              Recommended Reviews
+            </div>
+            <div
+              className='forCurrentRestaurant'>
+              for {''}
+              Fog Harbor Fish House
+            </div>
           </div>
           <div
-            className='forCurrentRestaurant'>
-            for Fog Harbor Fish House
+            className='searchAndSortContainer'>
+            <div
+              className='searchBarContainer'>
+              <input
+                className='searchBar'
+                type='text'
+                defaultValue=' Search within the reviews'
+              />
+              {<img
+                className='searchButton'
+                src={reviews[0].collateral.searchIcon}>
+              </img>}
+            </div>
+            <div
+              className='sortAndLanguageContainer'>
+              <div
+                className='sortContainer'>
+                <div>
+                  <select
+                    className='sortDropDown'>
+                    <option
+                      defaultValue='yelp'>
+                      Sort by Yelp Sort
+                    </option>
+                    <option
+                      value='newest'>
+                      Newest First
+                    </option>
+                    <option
+                      value='oldest'>
+                      Oldest First
+                    </option>
+                    <option
+                      value='highest'>
+                      Highest Rated
+                    </option>
+                    <option
+                      value='lowest'>
+                      Lowest Rated
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <div
+                className='languageContainer'>
+                <div>
+                  <select
+                    className='languageDropDown'>
+                    <option
+                      defaultValue='english'>
+                      Language English ({getRandomInclusive(3000, 5500)})
+                    </option>
+                    <option
+                      value='secondLanguage'>
+                      {reviews[0].languages}
+                    </option>
+                    <option
+                      value='thirdLanguage'>
+                      {reviews[1].languages}
+                    </option>
+                  </select>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div
-          className='searchBarContainer'>
-          <div
-            className='searchBar'>
-            <input
-              type='text'
-              defaultValue='Search within the reviews'
-            />
-          </div>
-          <div
-            className='searchButton'>
-            <button>
-              Go
-            </button>
-          </div>
-        </div>
-        <div
-          className='sortContainer'>
-          <div
-            className='sortBy'>
-            Sort by
-          </div>
-          <div
-            className='sortDropDown'>
-            <select>
-              <option
-                defaultValue='yelp'>
-                Yelp Sort
-              </option>
-              <option
-                value='newest'>
-                Newest First
-              </option>
-              <option
-                value='oldest'>
-                Oldest First
-              </option>
-              <option
-                value='highest'>
-                Highest Rated
-              </option>
-              <option
-                value='lowest'>
-                Lowest Rated
-              </option>
-            </select>
-          </div>
-        </div>
-        <div
-          className='languageContainer'>
-          <div
-            className='language'>
-            Language
-          </div>
-          <div
-            className='languageDropDown'>
-            <select>
-              <option
-                defaultValue='english'>
-                English (5007)
-              </option>
-              <option
-                value='japanese'>
-                Japanese (9)
-              </option>
-              <option
-                value='portugese'>
-                Portugese (6)
-              </option>
-            </select>
-          </div>
+        <hr
+          className='belowHeaderLine'>
+        </hr>
+        <div>
+          <ReviewsListEntry
+            reviews={reviews}
+          />
         </div>
       </div>
-      <div>
-        <ReviewsListEntry
-          reviews={reviews}
-        />
+      <div
+        className='footer'>
+        {<img
+          className='footerSiteMapIcon'
+          src={reviews[0].collateral.footerSiteMapIcon}>
+        </img>}
       </div>
     </div>
   )

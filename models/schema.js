@@ -38,6 +38,30 @@ const reviewsSchema = new mongoose.Schema({
     date: String,
     review: String,
   },
+  languages: String,
+  restaurantName: String,
+  nameAndOthers: String,
+  collateral: {
+    emptyProfile: String,
+    cameraIcon: String,
+    complimentIcon: String,
+    coolIcon: String,
+    embedReviewIcon: String,
+    emptyStarsIcon: String,
+    fiveStarsIcon: String,
+    followIcon: String,
+    fourStarsIcon: String,
+    friendsIcon: String,
+    funnyIcon: String,
+    morePagesFooter: String,
+    searchIcon: String,
+    shareReviewIcon: String,
+    threeStarsIcon: String,
+    usefulIcon: String,
+    reviewsStarsIcon: String,
+    sendMessageIcon: String,
+    footerSiteMapIcon: String,
+  }
 });
 
 const Reviews = mongoose.model('reviews', reviewsSchema);
