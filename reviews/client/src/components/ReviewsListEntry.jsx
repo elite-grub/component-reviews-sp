@@ -12,7 +12,6 @@ const getRandomInclusive = (min, max) => {
 const ReviewsListEntry = ({reviews}) => {
   return (
     <div>
-    {console.log(reviews)}
       <ul
         className='allReviewsContainer'>
         <li

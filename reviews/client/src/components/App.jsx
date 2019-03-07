@@ -1,7 +1,7 @@
 import React from 'react';
 import ReviewsList from './ReviewsList.jsx';
 
-const API_URL = 'http://database:3010/api/reviews/1';
+const API_URL = '/api/reviews/1';
 
 class Reviews extends React.Component {
   constructor(props) {
@@ -25,6 +25,7 @@ class Reviews extends React.Component {
 
   render() {
     let { isLoaded, data } = this.state;
+
     if (!isLoaded) {
       return (
         <div>

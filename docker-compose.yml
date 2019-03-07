@@ -3,7 +3,7 @@ version: '3'
 services:
 
   reviews:
-    build: Dockerfile
+    build: ./reviews
     depends_on:
       - 'database'
     ports:

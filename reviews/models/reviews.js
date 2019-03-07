@@ -374,7 +374,7 @@ const fakeRestaurantName = () => {
   return _.sample(fakeNameArr);
 }
 
-const save = () => {
+module.exports.save = () => {
   for (var i = 1; i < 101; i++) {
     const allReviews = new Reviews({
       id: i,
@@ -446,8 +446,3 @@ const save = () => {
     });
   }
 };
-
-db.on('error', console.error.bind(console, 'connection error'));
-db.once('open', () => {
-  save();
-});

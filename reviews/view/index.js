@@ -5,7 +5,7 @@ const { allReviews } = require('../models/index.js');
 const pathToAssets = path.join(__dirname, '../client/dist');
 const staticAssets = express.static(pathToAssets);
 const app = express();
-const port = process.env.PORT || 3010;
+const port = 3010;
 
 app.use(staticAssets);
 app.use(bodyParser.json());
@@ -24,6 +24,7 @@ app.get('/', (req, res) => {
 
 app.get('/api/reviews/:id', (req, res) => {
   let id = req.params.id;
+
   allReviews(id, (err, data) => {
     return err ?
     res.sendStatus(400) :

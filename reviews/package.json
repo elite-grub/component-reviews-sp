@@ -9,7 +9,8 @@
   "scripts": {
     "test": "jest",
     "start": "node view/index.js",
-    "build": "webpack -d --watch",
+    "new:start": "npm run seed && npm start",
+    "build": "webpack",
     "seed": "node models/reviews.js"
   },
   "repository": {
