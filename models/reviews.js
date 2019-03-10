@@ -108,21 +108,21 @@ const fakeDataFoodPictures = [
 ];
 
 const fakeDataName = [
-'Spark Park', 'Kenneth Trott', 'Winnie Fong', 'Brian Lagman',
-'Talan Patton', 'Coleman Anderson', 'Kianna Bates', 'Casey Barr',
-'Marcos Cuevas', 'Charles Huang', 'Vaughn Chang', 'Gunnar Ochoa',
-'Maximus Santos', 'David Odom', 'Cade Navarro', 'Kathryn Rollins',
-'Mina Sosa', 'Gideon Yu', 'Hayley Frazier', 'Aiden Adkins',
-'Brisa Duke', 'Araceli Pace', 'Ryann Blair', 'Rafael Everett',
-'Jay Horn', 'Molly Chavez', 'Myles Strickland', 'Nickolas Oliver',
-'Simone Alvarado', 'Nick Figueroa', 'Eden Ayala', 'Michelle Ortiz',
-'Dania Faulkner', 'Ariana Holden', 'Rhett Potter', 'Raul Banks',
-'Elias Vazquez', 'Larissa Hood', 'Jan Hutchinson', 'Simone Combs',
-'Messiah Harmon', 'Jama; Williamson', 'Genevieve Lin', 'Neveah Larson',
-'Adeline Jones', 'Jaden Mercer', 'Kristian Levy', 'Turner Wang',
-'Jamiya Zhang', 'Marcus Patel', 'Carolyn Kim', 'Yurem Nolan',
-'Graham Patterson', 'Jaxon Jennings', 'Rylie Richardson',
-'Colt Nunez', 'Jazmyn Cantu', 'Johan Bryant', 'Anna Golden'
+'Spark P.', 'Kenneth T.', 'Winnie F.', 'Brian L.',
+'Talan P.', 'Coleman A.', 'Kianna B.', 'Casey B.',
+'Marcos C.', 'Charles H.', 'Vaughn C.', 'Gunnar O.',
+'Maximus S.', 'David O.', 'Cade N.', 'Kathryn R.',
+'Mina S.', 'Gideon Y.', 'Hayley F.', 'Aiden A.',
+'Brisa D.', 'Araceli P.', 'Ryann B.', 'Rafael E.',
+'Jay H.', 'Molly C.', 'Myles S.', 'Nickolas O.',
+'Simone A.', 'Nick F.', 'Eden A.', 'Michelle O.',
+'Dania F.', 'Ariana H.', 'Rhett P.', 'Raul B.',
+'Elias V.', 'Larissa H.', 'Jan H.', 'Simone C.',
+'Messiah H.', 'Jama W.', 'Genevieve L.', 'Neveah L.',
+'Adeline J.', 'Jaden M.', 'Kristian L.', 'Turner W.',
+'Jamiya Z.', 'Marcus P.', 'Carolyn K.', 'Yurem N.',
+'Graham P.', 'Jaxon J.', 'Rylie R.',
+'Colt N.', 'Jazmyn C.', 'Johan B.', 'Anna G.'
 ];
 
 const fakeDataLocation = [
@@ -187,6 +187,10 @@ const getRandomInclusive = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
+const peopleRecommendedReviews = () => {
+  return _.sample(fakeDataName);
+}
+
 const fakeAvatar = () => {
   return _.sample(fakeDataAvatar);
 };
@@ -233,6 +237,22 @@ const fakeStars = () => {
   ]
   return _.sample(stars);
 };
+
+const fakeLanguages = () => {
+  let languagesArr = [
+    'Japanese',
+    'Portugese',
+    'Chinese',
+    'Polish',
+    'Spanish',
+    'Korean',
+    'French',
+    'Greek',
+    'Filipino',
+    'Malaysian'
+  ];
+  return `${_.sample(languagesArr)} (${getRandomInclusive(1, 28)})`
+}
 
 const fakeDate = () => {
   let month = getRandomInclusive(1, 12);
@@ -320,6 +340,40 @@ const fakeOwnerReview = () => {
   return _.sample(fakeDataReview);
 };
 
+const fakeRestaurantName = () => {
+  let fakeNameArr = [
+    'Fog Harbor Fish House',
+    'E & J',
+    'Super Duper',
+    'Marufuku Ramen',
+    'Farmhouse',
+    'Mensho Tokyo',
+    'Tacorea',
+    'Kitchen Story',
+    'Box Kitchen',
+    'Golden Boy Pizza',
+    'Brenda\'s French Soul Food',
+    'Burma Superstar',
+    'The Front Porch',
+    'The Bird',
+    'Chubby Noodle',
+    'Palm House',
+    'SoMa StrEat',
+    'HRD',
+    'Fondue Cowboy',
+    'Straw',
+    'Liholiho Yacht Club',
+    'Tataki',
+    'Thanh Long',
+    'Zero Zero',
+    'Barrel Head BrewHouse',
+    'Sushirrito',
+    'Hog Island Oyster Co',
+    'Dumpling Time'
+  ];
+  return _.sample(fakeNameArr);
+}
+
 const save = () => {
   for (var i = 1; i < 101; i++) {
     const allReviews = new Reviews({
@@ -359,6 +413,30 @@ const save = () => {
         title: fakeOwnerReviewTitle(),
         date: fakeOwnerReviewDate(),
         review: fakeOwnerReview(),
+      },
+      languages: fakeLanguages(),
+      restaurantName: fakeRestaurantName(),
+      nameAndOthers: peopleRecommendedReviews(),
+      collateral: {
+        emptyProfile: 'https://s3-us-west-1.amazonaws.com/elite-grub-collateral/empty_profile.png',
+        cameraIcon: 'https://s3-us-west-1.amazonaws.com/elite-grub-collateral/camera.png',
+        complimentIcon: 'https://s3-us-west-1.amazonaws.com/elite-grub-collateral/compliment.png',
+        coolIcon: 'https://s3-us-west-1.amazonaws.com/elite-grub-collateral/cool.png',
+        embedReviewIcon: 'https://s3-us-west-1.amazonaws.com/elite-grub-collateral/embed-review.png',
+        emptyStarsIcon: 'https://s3-us-west-1.amazonaws.com/elite-grub-collateral/empty-stars.png',
+        fiveStarsIcon: 'https://s3-us-west-1.amazonaws.com/elite-grub-collateral/five-stars.png',
+        followIcon: 'https://s3-us-west-1.amazonaws.com/elite-grub-collateral/follow.png',
+        fourStarsIcon: 'https://s3-us-west-1.amazonaws.com/elite-grub-collateral/four-stars.png',
+        friendsIcon: 'https://s3-us-west-1.amazonaws.com/elite-grub-collateral/friends.png',
+        funnyIcon: 'https://s3-us-west-1.amazonaws.com/elite-grub-collateral/funny.png',
+        morePagesFooter: 'https://s3-us-west-1.amazonaws.com/elite-grub-collateral/more-pages.png',
+        searchIcon: 'https://s3-us-west-1.amazonaws.com/elite-grub-collateral/search.png',
+        shareReviewIcon: 'https://s3-us-west-1.amazonaws.com/elite-grub-collateral/share-review.png',
+        threeStarsIcon: 'https://s3-us-west-1.amazonaws.com/elite-grub-collateral/three-stars.png',
+        usefulIcon: 'https://s3-us-west-1.amazonaws.com/elite-grub-collateral/useful.png',
+        reviewsStarsIcon: 'https://s3-us-west-1.amazonaws.com/elite-grub-collateral/reviews-stars.png',
+        sendMessageIcon: 'https://s3-us-west-1.amazonaws.com/elite-grub-collateral/send-message.png',
+        footerSiteMapIcon: 'https://s3-us-west-1.amazonaws.com/elite-grub-collateral/footer-site-map.png',
       }
     });
     allReviews.save(err => {

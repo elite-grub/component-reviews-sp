@@ -1,10 +1,18 @@
 import React from 'react';
+import '../../dist/styles.css';
 
 let id = 1
+
+const getRandomInclusive = (min, max) => {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
 
 const ReviewsListEntry = ({reviews}) => {
   return (
     <div>
+    {console.log(reviews)}
       <ul
         className='allReviewsContainer'>
         <li
@@ -15,26 +23,35 @@ const ReviewsListEntry = ({reviews}) => {
             <div
               className='emptyProfile'>
               {<img
-                src='https://s3-us-west-1.amazonaws.com/elite-grub-collateral/empty_profile.png'
+                className='emptyProfileImg'
+                src={reviews[0].collateral.emptyProfile}
               />}
             </div>
             <div
               className='emptyStartReviewContainer'>
               <div
                 className='emptyStarsContainer'>
-                <div
-                  className='emptyStars'>
-                  *****
-                </div>
+                {<img
+                  className='emptyStars'
+                  src={reviews[0].collateral.emptyStarsIcon}>
+                </img>}
               </div>
+              <hr
+                className='belowEmptyProfileLine'>
+              </hr>
               <div
                 className='startReviews'>
                 Start your review of {''}
-                <strong>Fog Harbor Fish House</strong>
+                <strong>
+                  Fog Harbor Fish House
+                </strong>
               </div>
             </div>
           </div>
         </li>
+        <hr
+          className='horizontalDivider'>
+        </hr>
         {reviews && reviews.map(review => (
           <li
             className='eachReviewLinkedList'
@@ -47,24 +64,26 @@ const ReviewsListEntry = ({reviews}) => {
                   className='profileContainer'>
                   <div
                     className='avatarContainer'>
-                    <div
-                      className='avatar'>
-                      {/* avatar */}
-                    </div>
+                      {<img
+                        src={review.user.avatar}
+                        className='avatar'
+                      />}
                   </div>
                   <div
                     className='detailsContainer'>
                     <ul
                       className='userInfoContainer'>
                       <li
-                        className='userName'
                         key={id++}>
-                        Ben D.
+                        <span
+                          className='userName'>
+                          {review.user.name}
+                        </span>
                       </li>
                       <li
                         className='locationInfo'
                         key={id++}>
-                        Southgate, MI
+                        {review.user.location}
                       </li>
                     </ul>
                     <ul
@@ -72,23 +91,52 @@ const ReviewsListEntry = ({reviews}) => {
                       <li
                         className='friendCount'
                         key={id++}>
-                        37 Friends
+                        {<img
+                          className='friendsIcon'
+                          src={reviews[0].collateral.friendsIcon}>
+                        </img>}
+                        {' '}
+                        <span
+                          className='numberOfFriends'>
+                          {review.user.friends}
+                        </span>
+                        {' '} friends
                       </li>
                       <li
                         className='reviewCount'
                         key={id++}>
-                        131 reviews
+                        {<img
+                          className='reviewsIcon'
+                          src={reviews[0].collateral.reviewsStarsIcon}>
+                        </img>}
+                        {' '}
+                        <span
+                          className='numberOfReviews'>
+                          {review.user.otherReviews}
+                        </span>
+                        {' '} reviews
                       </li>
                       <li
                         className='photoCount'
                         key={id++}>
-                        29 Photos
+                        {<img
+                          className='cameraIcon'
+                          src={reviews[0].collateral.cameraIcon}>
+                        </img>}
+                        {' '}
+                        <span
+                          className='numberOfPhotos'>
+                          {review.user.photos}
+                        </span>
+                        {' '} photos
                       </li>
-                      <li
-                        className='isElite'
-                        key={id++}>
-                        Elite '19'
-                      </li>
+                      {review.user.isElite === true &&
+                        <li
+                          className='isElite'
+                          key={id++}>
+                          Elite '{review.user.elite}
+                        </li>
+                      }
                     </ul>
                   </div>
                 </div>
@@ -97,27 +145,47 @@ const ReviewsListEntry = ({reviews}) => {
                   <li
                     className='shareReviewLink'
                     key={id++}>
+                    {<img
+                      className='shareReviewIcon'
+                      src={reviews[0].collateral.shareReviewIcon}>
+                    </img>}
                     Share review
                   </li>
                   <li
                     className='embedReviewLink'
                     key={id++}>
+                    {<img
+                      className='embedReviewIcon'
+                      src={reviews[0].collateral.embedReviewIcon}>
+                    </img>}
                     Embed review
                   </li>
                   <li
                     className='complimentLink'
                     key={id++}>
+                    {<img
+                      className='complimentIcon'
+                      src={reviews[0].collateral.complimentIcon}>
+                    </img>}
                     Compliment
                   </li>
                   <li
                     className='sendMessageLink'
                     key={id++}>
+                    {<img
+                      className='shareReviewIcon'
+                      src={reviews[0].collateral.sendMessageIcon}>
+                    </img>}
                     Send message
                   </li>
                   <li
                     className='followUserLink'
                     key={id++}>
-                    Follow Ben D.
+                    {<img
+                      className='followIcon'
+                      src={reviews[0].collateral.followIcon}>
+                    </img>}
+                    Follow {review.user.name}
                   </li>
                 </ul>
               </div>
@@ -125,38 +193,52 @@ const ReviewsListEntry = ({reviews}) => {
                 className='reviewContentContainer'>
                 <div
                   className='reviewStarsContainer'>
-                  <div
-                    className='reviewStars'>
-                    *****
-                  </div>
-                  <span>
-                    1/25/2019
+                  {<img
+                    className='reviewStars'
+                    src={reviews[0].collateral.fiveStarsIcon}>
+                  </img>}
+                  <span
+                    className='reviewDate'>
+                  {review.date}
                   </span>
                 </div>
-                <p>
-                  food was great
+                <p
+                  className='userReview'>
+                  {review.review}
                 </p>
                 <div
                   className='reviewFooterContainer'>
                   <div
                     className='didVoteContainer'>
-                    <p>
-                      <strong>
-                        Randy M. and 2 others
-                      </strong>
-                      {' '}
-                      voted for this review
-                    </p>
+                    {review.wasThisReview === true &&
+                      <p>
+                        <strong>
+                          {review.nameAndOthers} and {getRandomInclusive(1, 5)} others
+                        </strong>
+                        {' '}
+                        voted for this review
+                      </p>
+                    }
+                  </div>
+                  <div>
+                    {review.wasThisReview === false &&
+                      <p
+                        className='wasThisReviewQuestion'>
+                        <strong>
+                          Was this review ...?
+                        </strong>
+                      </p>
+                    }
                   </div>
                   <ul
                     className='votingButtonsContainer'>
                     <li
                       className='votingButtonContainer'
                       key={id++}>
-                      <span
-                        className='votingIcon'>
-                        &#9786;
-                      </span>
+                      {<img
+                        className='usefulIcon'
+                        src={reviews[0].collateral.usefulIcon}>
+                      </img>}
                       {' '}
                       <span
                         className='voteType'>
@@ -167,16 +249,16 @@ const ReviewsListEntry = ({reviews}) => {
                       {' '}
                       <span
                         className='voteCount'>
-                        1
+                        {getRandomInclusive(1, 5)}
                       </span>
                     </li>
                     <li
                       className='votingButtonContainer'
                       key={id++}>
-                      <span
-                        className='votingIcon'>
-                        &#9786;
-                      </span>
+                      {<img
+                        className='funnyIcon'
+                        src={reviews[0].collateral.funnyIcon}>
+                      </img>}
                       {' '}
                       <span
                         className='voteType'>
@@ -187,16 +269,16 @@ const ReviewsListEntry = ({reviews}) => {
                       {' '}
                       <span
                         className='voteCount'>
-                        2
+                        {getRandomInclusive(1, 5)}
                       </span>
                     </li>
                     <li
                       className='votingButtonContainer'
                       key={id++}>
-                      <span
-                        className='votingIcon'>
-                        &#9786;
-                      </span>
+                      {<img
+                        className='coolIcon'
+                        src={reviews[0].collateral.coolIcon}>
+                      </img>}
                       {' '}
                       <span
                         className='voteType'>
@@ -207,42 +289,54 @@ const ReviewsListEntry = ({reviews}) => {
                       {' '}
                       <span
                         className='voteCount'>
-                        1
+                        {getRandomInclusive(1, 5)}
                       </span>
                     </li>
                   </ul>
                 </div>
-                <div
-                  className='businessOwnerReplyContainer'>
+                {review.commentFromOwner === true &&
                   <div
-                    className='businessOwnerHeaderContainer'>
+                    className='businessOwnerReplyContainer'>
                     <div
-                      className='businessOwnerAvatarContainer'>
+                      className='businessOwnerHeaderContainer'>
                       <div
-                        className='businessOwnerAvatar'>
-                        {`:)`}
+                        className='businessOwnerAvatarContainer'>
+                        <div
+                          className='businessOwnerAvatar'>
+                          {<img
+                            src={review.ownerReview.avatar}
+                            className='businessAvatar'
+                          />}
+                        </div>
+                      </div>
+                      <div
+                        className='businessOwnerHeader'>
+                        <strong>
+                          Comment from {review.ownerReview.name} of {reviews[0].restaurantName}
+                        </strong>
+                        <br/>
+                        {reviews[0].ownerReview.title}
                       </div>
                     </div>
                     <div
-                      className='businessOwnerHeader'>
-                      <strong>
-                        Comment from Bob P. of Fog Harbor Fish House
-                      </strong>
-                      <br/>
-                      Business Manager
+                      className='ownerReviewContainer'>
+                      <span>
+                        {review.ownerReview.date} {review.user.name}
+                        <br/>
+                        {review.ownerReview.review}
+                      </span>
                     </div>
                   </div>
-                  <span>
-                    1/26/2019 Ben
-                    <br/>
-                    Thanks for eating with us
-                  </span>
-                </div>
+                }
               </div>
             </div>
           </li>
         ))}
       </ul>
+      {<img
+        className='morePages'
+        src={reviews[0].collateral.morePagesFooter}>
+      </img>}
     </div>
   )
 }
