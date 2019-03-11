@@ -128,8 +128,8 @@ body {
   border: 1px solid #e6e6e6;
   padding: 11px;
   border-radius: 4px;
-  width: 381.88px;
-  height: 97px;
+  /* width: 381.88px; */
+  height: 76px;
 }
 
 .emptyStars {
@@ -145,7 +145,7 @@ body {
 }
 
 .startReviews {
-  padding-top: 10px;
+  padding-top: 5px;
   padding-left: 10%;
   padding-right: 10%;
   font-size: 11pt;
@@ -283,6 +283,7 @@ body {
 
 .profileLinksContainer {
   padding-left: 0px;
+  padding-top: 10px;
   list-style-type: none;
 }
 
@@ -291,10 +292,24 @@ body {
 }
 
 .shareReviewIcon {
+  width: 16px;
+  height: 12px;
+}
+
+.shareReviewText {
 
 }
 
 .embedReviewLink {
+
+}
+
+.embedReviewIcon {
+  width: 18px;
+  height: 12px;
+}
+
+.embedReviewText {
 
 }
 
@@ -303,6 +318,11 @@ body {
 }
 
 .complimentIcon {
+  width: 12px;
+  height: 18px;
+}
+
+.complimentText {
 
 }
 
@@ -310,7 +330,12 @@ body {
 
 }
 
-.shareReviewIcon {
+.sendMessageIcon {
+  width: 14px;
+  height: 14px;
+}
+
+.sendMessageText {
 
 }
 
@@ -319,6 +344,11 @@ body {
 }
 
 .followIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.followText {
 
 }
 
@@ -361,9 +391,16 @@ body {
   margin-bottom: 2px;
 }
 
+.didVoteText {
+  font-size: 10pt;
+  color: #666;
+}
+
 .wasThisReviewQuestion {
   margin-top: 0px;
-  margin-bottom: 2px;
+  margin-bottom: 6px;
+  font-size: 10pt;
+  color: #666;
 }
 
 .votingButtonsContainer{
@@ -377,26 +414,32 @@ body {
 .votingButtonContainer {
   padding-left: 0px;
   padding-bottom: 13px;
+  border: 1px solid #ccc;
 }
 
 .usefulIcon {
-
+  width: 18px;
+  height: 18px;
 }
 
 .voteType {
-
+  font-size: 10pt;
+  color: #666;
 }
 
 .voteCount {
-
+  font-size: 10pt;
+  color: #666;
 }
 
 .funnyIcon {
-
+  width: 18px;
+  height: 18px;
 }
 
 .coolIcon {
-
+  width: 18px;
+  height: 18px;
 }
 
 .businessOwnerReplyContainer {
@@ -423,13 +466,14 @@ body {
 }
 
 .businessAvatar {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   object-fit: cover;
 }
 
 .businessOwnerHeader {
-
+  font-size: 10pt;
+  color: #666;
 }
 
 .ownerReviewContainer {

@@ -148,7 +148,13 @@ const ReviewsListEntry = ({reviews}) => {
                       className='shareReviewIcon'
                       src={reviews[0].collateral.shareReviewIcon}>
                     </img>}
-                    Share review
+                    <p
+                      className='shareReviewText'>
+                      Share review
+                    </p>
+                    <hr
+                      className='shareReviewLine'>
+                    </hr>
                   </li>
                   <li
                     className='embedReviewLink'
@@ -157,7 +163,13 @@ const ReviewsListEntry = ({reviews}) => {
                       className='embedReviewIcon'
                       src={reviews[0].collateral.embedReviewIcon}>
                     </img>}
-                    Embed review
+                    <p
+                      className='embedReviewText'>
+                      Embed review
+                      <hr
+                      className='embedReviewLine'>
+                      </hr>
+                    </p>
                   </li>
                   <li
                     className='complimentLink'
@@ -166,16 +178,22 @@ const ReviewsListEntry = ({reviews}) => {
                       className='complimentIcon'
                       src={reviews[0].collateral.complimentIcon}>
                     </img>}
-                    Compliment
+                    <p
+                      className='complimentText'>
+                      Compliment
+                    </p>
                   </li>
                   <li
                     className='sendMessageLink'
                     key={id++}>
                     {<img
-                      className='shareReviewIcon'
+                      className='sendMessageIcon'
                       src={reviews[0].collateral.sendMessageIcon}>
                     </img>}
-                    Send message
+                    <p
+                      className='sendMessageText'>
+                      Send message
+                    </p>
                   </li>
                   <li
                     className='followUserLink'
@@ -184,7 +202,10 @@ const ReviewsListEntry = ({reviews}) => {
                       className='followIcon'
                       src={reviews[0].collateral.followIcon}>
                     </img>}
-                    Follow {review.user.name}
+                    <p
+                      className='followText'>
+                      Follow {review.user.name}
+                    </p>
                   </li>
                 </ul>
               </div>
@@ -210,7 +231,8 @@ const ReviewsListEntry = ({reviews}) => {
                   <div
                     className='didVoteContainer'>
                     {review.wasThisReview === true &&
-                      <p>
+                      <p
+                        className='didVoteText'>
                         <strong>
                           {review.nameAndOthers} and {getRandomInclusive(1, 5)} others
                         </strong>

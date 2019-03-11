@@ -104,13 +104,6 @@ const ReviewsList = ({reviews}) => {
           />
         </div>
       </div>
-      <div
-        className='footer'>
-        {<img
-          className='footerSiteMapIcon'
-          src={reviews[0].collateral.footerSiteMapIcon}>
-        </img>}
-      </div>
     </div>
   )
 }
