@@ -12,7 +12,6 @@ const getRandomInclusive = (min, max) => {
 const ReviewsListEntry = ({reviews}) => {
   return (
     <div>
-    {console.log(reviews)}
       <ul
         className='allReviewsContainer'>
         <li
@@ -149,7 +148,13 @@ const ReviewsListEntry = ({reviews}) => {
                       className='shareReviewIcon'
                       src={reviews[0].collateral.shareReviewIcon}>
                     </img>}
-                    Share review
+                    <p
+                      className='shareReviewText'>
+                      Share review
+                    </p>
+                    <hr
+                      className='shareReviewLine'>
+                    </hr>
                   </li>
                   <li
                     className='embedReviewLink'
@@ -158,7 +163,13 @@ const ReviewsListEntry = ({reviews}) => {
                       className='embedReviewIcon'
                       src={reviews[0].collateral.embedReviewIcon}>
                     </img>}
-                    Embed review
+                    <p
+                      className='embedReviewText'>
+                      Embed review
+                    </p>
+                    <hr
+                    className='embedReviewLine'>
+                    </hr>
                   </li>
                   <li
                     className='complimentLink'
@@ -167,16 +178,28 @@ const ReviewsListEntry = ({reviews}) => {
                       className='complimentIcon'
                       src={reviews[0].collateral.complimentIcon}>
                     </img>}
-                    Compliment
+                    <p
+                      className='complimentText'>
+                      Compliment
+                    </p>
+                    <hr
+                    className='complimentLine'>
+                    </hr>
                   </li>
                   <li
                     className='sendMessageLink'
                     key={id++}>
                     {<img
-                      className='shareReviewIcon'
+                      className='sendMessageIcon'
                       src={reviews[0].collateral.sendMessageIcon}>
                     </img>}
-                    Send message
+                    <p
+                      className='sendMessageText'>
+                      Send message
+                    </p>
+                    <hr
+                    className='sendMessageLine'>
+                    </hr>
                   </li>
                   <li
                     className='followUserLink'
@@ -185,7 +208,10 @@ const ReviewsListEntry = ({reviews}) => {
                       className='followIcon'
                       src={reviews[0].collateral.followIcon}>
                     </img>}
-                    Follow {review.user.name}
+                    <p
+                      className='followText'>
+                      Follow {review.user.name}
+                    </p>
                   </li>
                 </ul>
               </div>
@@ -211,13 +237,17 @@ const ReviewsListEntry = ({reviews}) => {
                   <div
                     className='didVoteContainer'>
                     {review.wasThisReview === true &&
-                      <p>
-                        <strong>
+                      <div
+                        className='didVoteText'>
+                        <p
+                          className='nameAndOthers'>
                           {review.nameAndOthers} and {getRandomInclusive(1, 5)} others
-                        </strong>
-                        {' '}
-                        voted for this review
-                      </p>
+                          {' '}
+                        </p>
+                        <p>
+                          voted for this review
+                        </p>
+                      </div>
                     }
                   </div>
                   <div>
@@ -240,17 +270,17 @@ const ReviewsListEntry = ({reviews}) => {
                         src={reviews[0].collateral.usefulIcon}>
                       </img>}
                       {' '}
-                      <span
+                      <div
                         className='voteType'>
                         <strong>
                           Useful
                         </strong>
-                      </span>
+                      </div>
                       {' '}
-                      <span
+                      <div
                         className='voteCount'>
                         {getRandomInclusive(1, 5)}
-                      </span>
+                      </div>
                     </li>
                     <li
                       className='votingButtonContainer'
@@ -260,17 +290,17 @@ const ReviewsListEntry = ({reviews}) => {
                         src={reviews[0].collateral.funnyIcon}>
                       </img>}
                       {' '}
-                      <span
+                      <div
                         className='voteType'>
                         <strong>
                           Funny
                         </strong>
-                      </span>
+                      </div>
                       {' '}
-                      <span
+                      <div
                         className='voteCount'>
                         {getRandomInclusive(1, 5)}
-                      </span>
+                      </div>
                     </li>
                     <li
                       className='votingButtonContainer'
@@ -280,17 +310,17 @@ const ReviewsListEntry = ({reviews}) => {
                         src={reviews[0].collateral.coolIcon}>
                       </img>}
                       {' '}
-                      <span
+                      <div
                         className='voteType'>
                         <strong>
                           Cool
                         </strong>
-                      </span>
+                      </div>
                       {' '}
-                      <span
+                      <div
                         className='voteCount'>
                         {getRandomInclusive(1, 5)}
-                      </span>
+                      </div>
                     </li>
                   </ul>
                 </div>
@@ -322,21 +352,28 @@ const ReviewsListEntry = ({reviews}) => {
                       className='ownerReviewContainer'>
                       <span>
                         {review.ownerReview.date} {review.user.name}
-                        <br/>
-                        {review.ownerReview.review}
+                        <p
+                          className='ownerReviewText'>
+                          {review.ownerReview.review}
+                        </p>
                       </span>
                     </div>
                   </div>
                 }
               </div>
             </div>
+            <hr
+              className='horizontalDivider'>
+            </hr>
           </li>
         ))}
       </ul>
-      {<img
-        className='morePages'
-        src={reviews[0].collateral.morePagesFooter}>
-      </img>}
+      <div>
+        {<img
+          className='morePages'
+          src={reviews[0].collateral.morePagesFooter}>
+        </img>}
+      </div>
     </div>
   )
 }

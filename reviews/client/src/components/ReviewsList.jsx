@@ -37,10 +37,10 @@ const ReviewsList = ({reviews}) => {
                 type='text'
                 defaultValue=' Search within the reviews'
               />
-              {<img
+              <img
                 className='searchButton'
                 src={reviews[0].collateral.searchIcon}>
-              </img>}
+              </img>
             </div>
             <div
               className='sortAndLanguageContainer'>
@@ -103,13 +103,6 @@ const ReviewsList = ({reviews}) => {
             reviews={reviews}
           />
         </div>
-      </div>
-      <div
-        className='footer'>
-        {<img
-          className='footerSiteMapIcon'
-          src={reviews[0].collateral.footerSiteMapIcon}>
-        </img>}
       </div>
     </div>
   )

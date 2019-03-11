@@ -129,7 +129,7 @@ body {
   padding: 11px;
   border-radius: 4px;
   width: 381.88px;
-  height: 97px;
+  height: 76px;
 }
 
 .emptyStars {
@@ -145,7 +145,7 @@ body {
 }
 
 .startReviews {
-  padding-top: 10px;
+  padding-top: 5px;
   padding-left: 10%;
   padding-right: 10%;
   font-size: 11pt;
@@ -222,6 +222,7 @@ body {
   padding-left: 0px;
   margin-top: 4px;
   list-style-type: none;
+  color: #666;
 }
 
 .friendCount {
@@ -283,6 +284,8 @@ body {
 
 .profileLinksContainer {
   padding-left: 0px;
+  padding-top: 10px;
+  padding-right: 40px;
   list-style-type: none;
 }
 
@@ -291,35 +294,117 @@ body {
 }
 
 .shareReviewIcon {
+  width: 16px;
+  height: 12px;
+  float: left;
+  margin-right: 10px;
+}
 
+.shareReviewText {
+  font-size: 10pt;
+  color: #0073bb;
+  font-weight: 900;
+  margin-bottom: 13px;
+}
+
+.shareReviewLine {
+  border-color: #dcdcdc;
+  border-width: 0.5px;
+  margin-left: 25px;
+  margin-top: -8px;
 }
 
 .embedReviewLink {
+  margin-top: -8px;
+}
 
+.embedReviewIcon {
+  width: 18px;
+  height: 12px;
+  float: left;
+  margin-right: 10px;
+  margin-left: -2px;
+}
+
+.embedReviewText {
+  font-size: 10pt;
+  color: #0073bb;
+  font-weight: 900;
+}
+
+.embedReviewLine {
+  border-color: #dcdcdc;
+  border-width: 0.5px;
+  margin-left: 25px;
+  margin-top: -8px;
 }
 
 .complimentLink {
-
+  margin-top: -8px;
+  margin-left: 1px;
 }
 
 .complimentIcon {
+  width: 12px;
+  height: 18px;
+  float: left;
+  margin-right: 12px;
+}
 
+.complimentText {
+  font-size: 10pt;
+  color: #0073bb;
+  font-weight: 900;
+}
+
+.complimentLine {
+  border-color: #dcdcdc;
+  border-width: 0.5px;
+  margin-left: 25px;
+  margin-top: -8px;
 }
 
 .sendMessageLink {
-
+  margin-top: -8px;
 }
 
-.shareReviewIcon {
+.sendMessageIcon {
+  width: 14px;
+  height: 14px;
+  float: left;
+  margin-right: 11px;
+  margin-left: 1px;
+}
 
+.sendMessageText {
+  font-size: 10pt;
+  color: #0073bb;
+  font-weight: 900;
+}
+
+.sendMessageLine {
+  border-color: #dcdcdc;
+  border-width: 0.5px;
+  margin-left: 25px;
+  margin-top: -8px;
 }
 
 .followUserLink {
-
+  margin-top: -8px;
 }
 
 .followIcon {
+  width: 16px;
+  height: 16px;
+  float: left;
+  margin-right: 9px;
+  margin-left: 2px;
+}
 
+.followText {
+  font-size: 10pt;
+  color: #0073bb;
+  font-weight: 900;
 }
 
 .reviewContentContainer {
@@ -350,10 +435,13 @@ body {
 
 .userReview {
   margin-top: 6px;
+  font-size: 11pt;
+  color: #444;
 }
 
 .reviewFooterContainer {
   padding-top: 2px;
+  margin-bottom: 20px;
 }
 
 .didVoteContainer {
@@ -361,9 +449,24 @@ body {
   margin-bottom: 2px;
 }
 
+.didVoteText {
+  font-size: 10pt;
+  color: #666;
+  font-weight: bold;
+  display: flex;
+  margin-bottom: -10px;
+}
+
+.nameAndOthers {
+  color: #0073bb;
+  margin-right: 5px;
+}
+
 .wasThisReviewQuestion {
   margin-top: 0px;
-  margin-bottom: 2px;
+  margin-bottom: 6px;
+  font-size: 9.5pt;
+  color: #666;
 }
 
 .votingButtonsContainer{
@@ -372,31 +475,50 @@ body {
   list-style-type: none;
   padding-top: 2px;
   padding-left: 0px;
+  height: 30px;
 }
 
 .votingButtonContainer {
-  padding-left: 0px;
-  padding-bottom: 13px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 91.81px;
+  display: flex;
 }
 
 .usefulIcon {
-
+  width: 18px;
+  height: 18px;
+  margin-left: 7px;
+  margin-top: 5px;
 }
 
 .voteType {
-
+  font-size: 9.5pt;
+  color: #666;
+  margin-left: 10px;
+  margin-top: 7px;
 }
 
 .voteCount {
-
+  font-size: 9.5pt;
+  color: #666;
+  margin-left: 5px;
+  margin-top: 7px;
 }
 
 .funnyIcon {
-
+  width: 18px;
+  height: 18px;
+  margin-left: 7px;
+  margin-top: 5px;
 }
 
 .coolIcon {
-
+  width: 18px;
+  height: 18px;
+  margin-left: 7px;
+  margin-top: 5px;
 }
 
 .businessOwnerReplyContainer {
@@ -411,7 +533,7 @@ body {
 }
 
 .businessOwnerHeaderContainer {
-
+  margin-bottom: 10px;
 }
 
 .businessOwnerAvatarContainer {
@@ -423,17 +545,26 @@ body {
 }
 
 .businessAvatar {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   object-fit: cover;
+  float: left;
+  margin-right: 8px;
+  border-radius: 4px;
 }
 
 .businessOwnerHeader {
-
+  font-size: 10pt;
+  color: #666;
 }
 
 .ownerReviewContainer {
+  font-size: 11pt;
+  color: #444;
+}
 
+.ownerReviewText {
+  margin-top: 3px;
 }
 
 .morePages {

@@ -8,8 +8,9 @@
   },
   "scripts": {
     "test": "jest",
-    "start": "nodemon view/index.js",
-    "build": "webpack -d --watch",
+    "start": "node view/index.js",
+    "new:start": "npm run seed && npm start",
+    "build": "webpack",
     "seed": "node models/reviews.js"
   },
   "repository": {
